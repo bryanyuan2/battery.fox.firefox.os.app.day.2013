@@ -191,10 +191,3 @@ body{
 @-moz-keyframes animate-stripes {
 	0% {background-position: 0 0;} 100% {background-position: 60px 0;}
 }
-#dev_win{
-	position: absolute;
-	width: 350px;
-	-moz-border-radius: 7px;
-	-webkit-border-radius: 7px;
-	border-radius: 7px;
-}

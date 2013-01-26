@@ -5,10 +5,7 @@ $(function() {
 	// https://github.com/robnyman/robnyman.github.com/tree/master/battery
 	//
 	
-	//var dev_text_title = ['主人，該充電了','好過分','電力全滿'];
-	//var dev_text_description = ['您手機的電量過低，請連結充電器','喔，你拔除了充電器','主人非常好，我電力全滿'];
-
-	// under 30%, remove_plug, charging, ready to die, full battery, normal condition
+	// under 30%, remove_plug, charging, ready to die, full battery, normal condition, 50%
 	var dev_text_title = ["主人，該充電了","主人，好過分","主人，我正在恢復體力","主人，我好餓好餓","主人非常好，我體力滿滿","主人，我想吃餅乾"];
 	var dev_text_description = ["您手機的電量過低，請連結充電器","喔，你拔除了充電器","您的手機目前正在充電","您的手機即將沒電","您的手機目前電力良好","您的手機目前電力良好，可順手接上充電器"];
 	
@@ -17,9 +14,8 @@ $(function() {
 	$("#dev_content_description_text").text("").append(dev_text_description[0]);
 	$("#progress_item").css("width","0%").parent().removeClass("blue").addClass("orange");
 
-	$("#dev_win").fadeOut(2000);
+	$("#dev_win").hide();
 	
-
 	var p_charging,p_level;
 	var color;
 	var require_charging = false;
@@ -71,17 +67,23 @@ $(function() {
             	color = color_array[3];
             }
             
-            
             switch(Math.round(battery.level * 100)){
             	case 100:
             		//audio.play();
+            		document.getElementById('100per').play();
+            	case 70:
+            		document.getElementById('70per').play();
+            	case 30:
+            		document.getElementById('30per').play();
+            	case 10:
+            		document.getElementById('10per').play();
             	break;
             }
 
             if(battery.charging){
 
             	// 充電中     
-            	document.getElementById('in').play();
+            	document.getElementById('plug').play();
 
             	// charging 主人，我正在恢復體力 (您的手機目前正在充電)
             	$("#dev_content_text").text("").append(dev_text_title[2]);
@@ -92,14 +94,22 @@ $(function() {
             }
             else if(p_charging == "y" && !battery.charging ){
 
-            	document.getElementById('out').play();
+            	document.getElementById('unplug').play();
 
             	//之前有充電 現在充電終止
 
             	if(Math.round(battery.level * 100) < 10)
-            		;//勇者無懼
+            	{
+            		// 勇者無懼
+            		$("#dev_win").fadeIn(2000,function(){
+            			$(this).fadeOut();
+            		});
+            	}
+            	
             	else if(Math.round(battery.level * 100) == 100)
-            		;//體力全滿
+            	{
+            		// 體力全滿
+            	}
             	else {
 
             		// remove_plug  主人，好過分 (喔，你拔除了充電器)
@@ -122,7 +132,6 @@ $(function() {
     }
 
 
-	//document.getElementById('audio').play();
-
+	document.getElementById('open').play();
 
 });
