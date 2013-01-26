@@ -22,6 +22,11 @@ $(function() {
 
 	var color_array = ['red','yellow','orange','green'];
 
+	/*
+	var notification_m1 = navigator.mozNotification.createNotification("勇者無懼" , "成就「勇者無懼」解鎖", "/img/icon128.png");
+	notification_m1.show();
+	*/
+
 	battery = navigator.battery || navigator.webkitBattery || navigator.mozBattery;
     if (battery != null) {
         function setStatus () {
@@ -30,7 +35,11 @@ $(function() {
             if(battery.level < 0.1){
             	color = color_array[0];
             	if(require_charging)
-            		;//屢勸不聽
+            	{
+            		// 屢勸不聽
+					var notification_m2 = navigator.mozNotification.createNotification("勇者無懼" , "成就「勇者無懼」解鎖");
+					notification_m2.show();
+            	}
             }
             else if(battery.level < 0.3){
 
@@ -90,7 +99,11 @@ $(function() {
 				$("#dev_content_description_text").text("").append(dev_text_description[2]);
             		
             	if(Math.round(battery.level * 100) == 5)
-            		;//即刻救援
+            	{
+            		// 即刻救援
+					var notification_m2 = navigator.mozNotification.createNotification("即刻救援" , "成就「即刻救援」解鎖");
+					notification_m2.show();
+            	}
             }
             else if(p_charging == "y" && !battery.charging ){
 
@@ -101,6 +114,9 @@ $(function() {
             	if(Math.round(battery.level * 100) < 10)
             	{
             		// 勇者無懼
+					var notification_m1 = navigator.mozNotification.createNotification("勇者無懼" , "成就「勇者無懼」解鎖");
+					notification_m1.show();
+
             		$("#dev_win").fadeIn(2000,function(){
             			$(this).fadeOut();
             		});
@@ -109,9 +125,10 @@ $(function() {
             	else if(Math.round(battery.level * 100) == 100)
             	{
             		// 體力全滿
+					var notification_m3 = navigator.mozNotification.createNotification("體力全滿" , "成就「體力全滿」解鎖");
+					notification_m3.show();
             	}
             	else {
-
             		// remove_plug  主人，好過分 (喔，你拔除了充電器)
             		$("#dev_content_text").text("").append(dev_text_title[1]);
     				$("#dev_content_description_text").text("").append(dev_text_description[1]);
