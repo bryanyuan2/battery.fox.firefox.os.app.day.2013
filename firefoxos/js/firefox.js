@@ -1,12 +1,15 @@
 $(function() {
 	
+	String.prototype.replaceAt=function(index, character) {
+    	return this.substr(0, index) + character + this.substr(index+character.length);
+   	}
 	//
 	// battery
 	// https://github.com/robnyman/robnyman.github.com/tree/master/battery
 	//
 	
 	// under 30%, remove_plug, charging, ready to die, full battery, normal condition, 50%
-	var dev_text_title = ["主人，該充電了","主人，好過分","主人，我正在恢復體力","主人，我好餓好餓","主人非常好，我體力滿滿","主人，我想吃餅乾"];
+	var dev_text_title = ["主人，該充電了","主人，好過分","主人，我在恢復體力","主人，我好餓好餓","主人，我體力滿滿","主人，我想吃餅乾"];
 	var dev_text_description = ["您手機的電量過低，請連結充電器","喔，你拔除了充電器","您的手機目前正在充電","您的手機即將沒電","您的手機目前電力良好","您的手機目前電力良好，可順手接上充電器"];
 	
 
@@ -19,13 +22,15 @@ $(function() {
 	var p_charging,p_level;
 	var color;
 	var require_charging = false;
-
+	var achievement="fffffff";
+	
 	var color_array = ['red','yellow','orange','green'];
 
-	/*
-	var notification_m1 = navigator.mozNotification.createNotification("勇者無懼" , "成就「勇者無懼」解鎖", "/img/icon128.png");
+	
+	var notification_m1 = navigator.mozNotification.createNotification("勇者無懼" , "成就「勇者無懼」解鎖");
 	notification_m1.show();
-	*/
+	achievement.replaceAt(3,"t");
+
 
 	battery = navigator.battery || navigator.webkitBattery || navigator.mozBattery;
     if (battery != null) {
@@ -37,6 +42,8 @@ $(function() {
             	if(require_charging)
             	{
             		// 屢勸不聽
+            		achievement.replaceAt(3,"t");
+
 					var notification_m2 = navigator.mozNotification.createNotification("勇者無懼" , "成就「勇者無懼」解鎖");
 					notification_m2.show();
             	}
@@ -46,6 +53,8 @@ $(function() {
             	// under 30%  主人，我好餓好餓 (您手機的電量過低，請連結充電器)
             	$("#dev_content_text").text("").append(dev_text_title[0]);
     			$("#dev_content_description_text").text("").append(dev_text_description[0]);
+
+    			achievement.replaceAt(5,"t");
 
     			color = color_array[1];
     			require_charging = true;
@@ -94,13 +103,16 @@ $(function() {
             	// 充電中     
             	document.getElementById('plug').play();
 
-            	// charging 主人，我正在恢復體力 (您的手機目前正在充電)
+            	// charging 主人，我在恢復體力 (您的手機目前正在充電)
             	$("#dev_content_text").text("").append(dev_text_title[2]);
 				$("#dev_content_description_text").text("").append(dev_text_description[2]);
             		
             	if(Math.round(battery.level * 100) == 5)
             	{
             		// 即刻救援
+
+            		achievement.replaceAt(4,"t");
+
 					var notification_m2 = navigator.mozNotification.createNotification("即刻救援" , "成就「即刻救援」解鎖");
 					notification_m2.show();
             	}
@@ -114,6 +126,9 @@ $(function() {
             	if(Math.round(battery.level * 100) < 10)
             	{
             		// 勇者無懼
+
+            		achievement.replaceAt(0,"t");
+
 					var notification_m1 = navigator.mozNotification.createNotification("勇者無懼" , "成就「勇者無懼」解鎖");
 					notification_m1.show();
 
@@ -125,10 +140,16 @@ $(function() {
             	else if(Math.round(battery.level * 100) == 100)
             	{
             		// 體力全滿
+
+            		achievement.replaceAt(1,"t");
+
 					var notification_m3 = navigator.mozNotification.createNotification("體力全滿" , "成就「體力全滿」解鎖");
 					notification_m3.show();
             	}
             	else {
+
+            		achievement.replaceAt(6,"t");
+
             		// remove_plug  主人，好過分 (喔，你拔除了充電器)
             		$("#dev_content_text").text("").append(dev_text_title[1]);
     				$("#dev_content_description_text").text("").append(dev_text_description[1]);
@@ -136,6 +157,9 @@ $(function() {
             }
             p_level= Math.round(battery.level * 100);
             p_charging= (battery.charging)? "y" : "n";
+
+            window.localStorage["achievement"] = achievement;
+
         }
         // Set initial status
         setStatus();
