@@ -27,10 +27,9 @@ $(function() {
 	var color_array = ['red','yellow','orange','green'];
 
 	
-	var notification_m1 = navigator.mozNotification.createNotification("勇者無懼" , "成就「勇者無懼」解鎖");
-	notification_m1.show();
-	achievement.replaceAt(3,"t");
-
+	var notification_st = navigator.mozNotification.createNotification("初次見面" , "成就「初次見面」解鎖");
+	notification_st.show();
+	
 
 	battery = navigator.battery || navigator.webkitBattery || navigator.mozBattery;
     if (battery != null) {
