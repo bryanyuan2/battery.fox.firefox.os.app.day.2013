@@ -1,3 +1,7 @@
+body{
+	overflow-x: hidden;
+	overflow-y: auto;
+}
 #dev_content
 {
 	text-align : center;
