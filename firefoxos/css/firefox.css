@@ -9,13 +9,14 @@
 	max-height: 100%;
 }
 #dev_content_text{
+	z-index: 20;
 	font-size: 32px;
 	color:#fff;
 		text-shadow:0px 0px 20px #00c6ff;
 	}
-	#dev_content_description_text{
-		margin: 20px 0px 0px 0px;
-	}
+#dev_content_description_text{
+	margin: 20px 0px 0px 0px;
+}
 #dev_msg{
 	z-index: 10;
 	color: #FFFFFF;
@@ -23,7 +24,7 @@
 	position: absolute;
 	padding-top: 50px;
 	width: 100%;
-	height: 250px;
+	height: 150px;
 	background-color: rgba(0,0,0,0.95);
 	top:40%;
 
@@ -122,14 +123,32 @@
 	  background-image: linear-gradient(top, #fecf23, #fd9215);  
 }	
 
+.red span {
+	  background-color: #FF0000;
+	  background-image: -webkit-gradient(linear, left top, left bottom, from(#FF0000), to(#4ca916));
+	  background-image: -webkit-linear-gradient(top, #FF0000, #4ca916);
+	  background-image: -moz-linear-gradient(top, #FF0000, #4ca916);
+	  background-image: -ms-linear-gradient(top, #FF0000, #4ca916);
+	  background-image: -o-linear-gradient(top, #FF0000, #4ca916);
+	  background-image: linear-gradient(top, #FF0000, #4ca916);  
+}
 .green span {
-	  background-color: #a5df41;
-	  background-image: -webkit-gradient(linear, left top, left bottom, from(#a5df41), to(#4ca916));
-	  background-image: -webkit-linear-gradient(top, #a5df41, #4ca916);
-	  background-image: -moz-linear-gradient(top, #a5df41, #4ca916);
-	  background-image: -ms-linear-gradient(top, #a5df41, #4ca916);
-	  background-image: -o-linear-gradient(top, #a5df41, #4ca916);
-	  background-image: linear-gradient(top, #a5df41, #4ca916);  
+	  background-color: #00FF00;
+	  background-image: -webkit-gradient(linear, left top, left bottom, from(#00FF00), to(#4ca916));
+	  background-image: -webkit-linear-gradient(top, #00FF00, #4ca916);
+	  background-image: -moz-linear-gradient(top, #00FF00, #4ca916);
+	  background-image: -ms-linear-gradient(top, #00FF00, #4ca916);
+	  background-image: -o-linear-gradient(top, #00FF00, #4ca916);
+	  background-image: linear-gradient(top, #00FF00, #4ca916);  
+}
+.yellow span {
+	  background-color: #FFFF00	;
+	  background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFF00	), to(#4ca916));
+	  background-image: -webkit-linear-gradient(top, #FFFF00	, #4ca916);
+	  background-image: -moz-linear-gradient(top, #FFFF00	, #4ca916);
+	  background-image: -ms-linear-gradient(top, #FFFF00	, #4ca916);
+	  background-image: -o-linear-gradient(top, #FFFF00	, #4ca916);
+	  background-image: linear-gradient(top, #FFFF00	, #4ca916);  
 }
 .stripes span {
 	-webkit-background-size: 30px 30px;
