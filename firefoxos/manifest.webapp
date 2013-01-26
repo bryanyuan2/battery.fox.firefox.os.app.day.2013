@@ -1,0 +1,13 @@
+{
+  "name": "BatteryBot",
+  "description": "Mozilla Firefox OS Dev Day 2013",
+  "launch_path": "/",
+  "icons": {
+    "128": "/img/icon-128.png"
+  },
+  "developer": {
+    "name": "bryanyuan2",
+    "url": "https://www.facebook.com/bryanyuan2"
+  },
+  "default_locale": "zh"
+}
