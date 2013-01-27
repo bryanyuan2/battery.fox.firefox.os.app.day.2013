@@ -1,8 +1,9 @@
 <!doctype html>
- 
+
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable:0">
 	<link rel="stylesheet" href="css/jquery.mobile-1.2.0.min.css" />
 	<link rel="stylesheet" href="css/firefox.css" />
 	<script src="js/jquery-1.8.2.min.js"></script>
@@ -16,9 +17,8 @@
 	<div data-role="header">
 		<h1>Battery Fox</h1>
 	</div><!-- /header -->
-	
-	
-	<div id="dev_content" data-role="content">	
+
+	<div id="dev_content" data-role="content">
 		<img id="dev_firefox" src="img/firefox.png" />
 		<div id="dev_msg">
 			<div class="circle"></div>
@@ -28,10 +28,9 @@
 			<div class="progress-bar blue stripes">
     			<span id="progress_item" style="width: 100%"></span>
 			</div>
-	
 		</div>
 	</div><!-- /content -->
-	
+
 	<div data-role="footer">
 		<h4>更多</h4>
 	</div><!-- /footer -->
@@ -52,8 +51,6 @@
 </body>
 <script>
 	// https://developer.mozilla.org/en-US/docs/Apps/Getting_Started
-
-	//
 	// Checking whether the app is installed
 	//
 	var request = navigator.mozApps.getSelf();
