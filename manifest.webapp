@@ -12,6 +12,8 @@
   "default_locale": "zh",
   "fullscreen": "true",
   "permissions": {
-    "desktop-notification":{}
+    "desktop-notification":{
+      "description": "Notifications for battery status changed"
+    }
   }
 }
