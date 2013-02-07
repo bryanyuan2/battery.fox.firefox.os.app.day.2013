@@ -10,8 +10,5 @@
     "url": "https://www.facebook.com/bryanyuan2"
   },
   "default_locale": "zh",
-  "fullscreen": "true",
-  "permissions": {
-    "desktop-notification":{}
-  }
+  "fullscreen": "true"
 }

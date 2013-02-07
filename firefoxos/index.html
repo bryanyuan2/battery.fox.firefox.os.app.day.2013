@@ -53,7 +53,7 @@
 	</div><!-- /footer -->
 
 	<ul data-role="listview">
-		<li><a data-transition="flip" onclick="location.replace('achievements.html')" href="achievements.html">成就系統</a></li>
+		<li><a data-transition="flip" href="achievements.html">成就系統</a></li>
 		<li><a data-transition="flip" href="dev.html">開發小組</a></li>
 	</ul>
 </div><!-- /page -->
@@ -66,37 +66,4 @@
 <audio id="unplug" src="audio/unplug.ogg"></audio>
 
 </body>
-<script>
-	// https://developer.mozilla.org/en-US/docs/Apps/Getting_Started
-
-	//
-	// Checking whether the app is installed
-	//
-	var request = navigator.mozApps.getSelf();
-	request.onsuccess = function() {
-	  if (request.result) {
-	    // we're installed
-	  } else {
-	    // not installed
-	  }
-	};
-	request.onerror = function() {
-	  alert('Error checking installation status: ' + this.error.message);
-	};
-
-	//
-	// Installing the app
-	//
-	var request = navigator.mozApps.getSelf();
-	request.onsuccess = function() {
-	  if (request.result) {
-	    // we're installed
-	  } else {
-	    // not installed
-	  }
-	};
-	request.onerror = function() {
-	  alert('Error checking installation status: ' + this.error.message);
-	};
-</script>
 </html>
