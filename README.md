@@ -2,7 +2,7 @@
 
 Enhanced Firefox OS battery management Web App using Firefox OS Web APIs.
 
-* SpeakER deck: [link](https://speakerdeck.com/bryanyuan2/battery-fox-mozilla-firefox-os-dev-day-2013)
+* Speaker deck: [link](https://speakerdeck.com/bryanyuan2/battery-fox-mozilla-firefox-os-dev-day-2013)
 * Firefox Marketplace: [link](https://marketplace.firefox.com/app/battery-fox)
 
 ![Battary Fox](http://blog.mozilla.com.tw/wp-content/uploads/222.jpg)
